@@ -1,11 +1,34 @@
 // 1. Make the function deck_o_cards assemble an array of cards using the provided suits and values arrays.
 // Each card in the deck should be an object formatted as: {suit: 'hearts', value: 'A'}
-function deck_o_cards() {
-  var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
-  var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+function card(value,name,suit){
+      this.value=value;
+      this.name=name;
+      this.suit=suit;
 
-  var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
+  }
+
+
+   function deck() {
+      var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+      var names = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
+      var cards = [];
+console.log(suits,names,cards);
+          for (var s=0; s< suits.length; s++ ){
+
+            for (var n=0; n < names.length; n++){
+
+              cards.push(new card(n+1, names[n], suits[s]));
+            }
+          }
+        return cards;
+
+    }
+    console.log('hiiii');
+    var myDeck = new deck();
+    console.log(myDeck);
+//hIII this all I manage to figure out!:/
+
+    var shuffledCards = []; // deck shuffled
 
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
@@ -22,7 +45,7 @@ function deck_o_cards() {
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
 
-}
+
 
 
 
